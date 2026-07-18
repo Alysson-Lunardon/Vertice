@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato | Vértice Studio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- CABEÇALHO -->
+    <header class="header-minimalista">
+        <div class="logo">VÉRTICE.</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="index.html#projetos">Projetos</a></li>
+                <li><a href="contato.html">Fale Conosco</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- LAYOUT DIVIDIDO (Split Screen) -->
+        <section class="contato-split">
+            
+            <!-- Lado Esquerdo: Informações -->
+            <div class="contato-info">
+                <h1>Vamos construir algo único.</h1>
+                <p>Nossa equipe está pronta para entender sua visão e transformar o seu espaço. Preencha o formulário ou visite nosso estúdio.</p>
+                
+                <div class="dados-escritorio">
+                    <p><strong>Estúdio</strong><br>Av. Paulista, 1500 - Conjunto 42<br>São Paulo, SP</p>
+                    <p><strong>Contato</strong><br>ola@verticestudio.com.br<br>+55 11 99999-0000</p>
+                </div>
+            </div>
+
+            <!-- Lado Direito: Formulário Minimalista -->
+            <div class="contato-form-wrapper">
+                <form id="form-arquitetura" class="form-minimalista">
+                    
+                    <div class="campo-limpo">
+                        <input type="text" id="nome" name="nome" required placeholder="Seu nome completo">
+                    </div>
+
+                    <div class="campo-limpo">
+                        <input type="email" id="email" name="email" required placeholder="Seu melhor e-mail">
+                    </div>
+
+                    <div class="campo-limpo">
+                        <select id="interesse" name="interesse" required>
+                            <option value="" disabled selected>Qual o escopo do projeto?</option>
+                            <option value="residencial">Projeto Residencial</option>
+                            <option value="comercial">Projeto Comercial</option>
+                            <option value="interiores">Design de Interiores</option>
+                        </select>
+                    </div>
+
+                    <div class="campo-limpo">
+                        <textarea id="mensagem" name="mensagem" rows="4" required placeholder="Conte-nos um pouco sobre o que você imagina..."></textarea>
+                    </div>
+
+                    <div id="mensagem-sucesso" class="mensagem-oculta">Recebemos sua mensagem. Entraremos em contato em breve.</div>
+
+                    <button type="submit" class="btn-elegante">Enviar Mensagem</button>
+                </form>
+            </div>
+
+        </section>
+    </main>
+
+    <footer class="footer-limpo">
+        <p>&copy; 2026 Vértice Studio. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- Adicionando um script direto aqui apenas para a animação do botão -->
+    <script>
+        document.getElementById('form-arquitetura').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const btn = this.querySelector('button');
+            const msg = document.getElementById('mensagem-sucesso');
+            
+            btn.style.display = 'none'; // Esconde o botão
+            msg.style.display = 'block'; // Mostra a mensagem elegante
+            
+            setTimeout(() => {
+                this.reset();
+                btn.style.display = 'inline-block';
+                msg.style.display = 'none';
+            }, 4000);
+        });
+    </script>
+</body>
+</html>
